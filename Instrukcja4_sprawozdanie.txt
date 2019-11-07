@@ -1,0 +1,45 @@
+Tomasz Królik 226702	
+
+3.
+mkdir tmp - tworzy folder tmp w folderu domowym
+touch plik.txt - tworzy pusty plik tekstowy "plik" 
+
+
+4. 
+ls -i - wyœwietla numery inode wszystkich plików z danego folderu
+
+Inode -  jest  numerem indeksu pliku i sk³ada sie z takich atrybutów jak; 
+Typy plików (plik wykonywalny, specjalne blokowanie itp.)
+Uprawnienia (odczyt, zapis itp.)
+UID (w³aœciciel)
+GID (grupa)
+Rozmiar pliku
+Znaczniki czasu, w tym ostatni dostêp, ostatnia modyfikacja i ostatnia zmiana numeru i-wêz³a.
+Czas usuwania pliku
+Liczba linków (miêkka / twarda)
+Lokalizacja ile na dysku twardym.
+Inne metadane dotycz¹ce pliku.
+
+5. 
+ln -s plik softlink1 - tworzy softlink do pliku plik.txt
+ln plik.txt hardlink - tworzy hardlink do pliku plik.txt
+
+6.
+392081 -rw-r--r-- 2 pi pi 0 wrz 26 05:46 hardlink
+392081 -rw-r--r-- 2 pi pi 0 wrz 26 05:46 plik.txt
+392088 lrwxrwxrwx 1 pi pi 4 wrz 26 06:10 softlink1 -> plik
+
+7.
+mv plik.txt ~/tmp2 - przeniesienie plik.txt z folderu tmp do folderu tmp2
+
+8.
+softlink przesta³ dzialac a z hardlinkiem nic sie nie stalo
+
+9.
+sudo adduser tomek - dodanie nowego uzytkownika
+sudo chown tomek plik.txt - wpisane w katalogu tmp2 zmienia wlasciciela pliku na tomek 
+
+10.
+sudo chmod 470 plik.txt - zmiana uprawnien dla wymienionych uzytkownikow
+
+
